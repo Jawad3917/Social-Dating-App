@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using API.DTOs;
 using API.Entities;
+using API.Helpers;
+using CloudinaryDotNet.Actions;
 
 namespace API.Interfaces
 {
@@ -13,8 +15,8 @@ namespace API.Interfaces
         Task<bool>SaveAllAsync();
         Task<IEnumerable<AppUser>>GetUsersAsync();
         Task<AppUser> GetUserByIdAsync(int id);
-        Task<AppUser> GEtUserByUsernameAsync(string userName);
-        Task<IEnumerable<MemberDto>> GetMembersAsync();
+        Task<AppUser> GetUserByUsernameAsync(string userName);
+        Task<PagedList<MemberDto>> GetMembersAsync(UserParams userParams);
         Task<MemberDto> GetMemberAsync(string userName);
     }
 }
